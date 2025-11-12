@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* :root {
+  --background: white;
+  --color: black;
+} */
+
+@theme {
+  --animate-marquee: marquee 4s linear infinite;
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--color-neutral-50);
+  --color-text: var(--color-orange-700);
+}
