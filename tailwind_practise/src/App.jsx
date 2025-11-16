@@ -18,6 +18,7 @@ import MotionDashboard from "./components/motion.dashboard";
 import Navbar from "./motionComponents/navbar";
 import TextAnimation from "./motionComponents/textAnimation";
 import AnimationSequenceButton from "./motionComponents/animationSequence";
+import Testimonial from "./motionComponents/TestimonialComponents";
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
       {/* <Parallax /> */}
       {/* <Navbar /> */}
       {/* <TextAnimation /> */}
-      <AnimationSequenceButton />
+      <Testimonial />
     </div>
   );
 }
