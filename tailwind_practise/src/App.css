@@ -5,7 +5,12 @@
   --background: white;
   --color: black;
 } */
-
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+} */
 @theme {
   --animate-marquee: marquee 4s linear infinite;
   @keyframes marquee {
@@ -23,3 +28,9 @@
   --color-foreground: var(--color-neutral-50);
   --color-text: var(--color-orange-700);
 }
+
+/* .mask {
+  mask-image: url(../src/assets/mask.svg);
+  mask-repeat: no-repeat;
+  mask-size: 50px;
+} */

@@ -1,201 +1,144 @@
 import { useState } from "react";
-import { GrTechnology } from "react-icons/gr";
-import { LayoutGroup, motion } from "framer-motion";
-import { CgPlayButtonO } from "react-icons/cg";
-import { div } from "motion/react-client";
+import { SiPlausibleanalytics } from "react-icons/si";
+import { motion } from "motion/react";
 
 const Navbar = () => {
-  const items = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
+  const [hovered, setHovered] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const navItems = [
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
+    { name: "Services", link: "/services" },
+    { name: "Contact", link: "/contact" },
   ];
-  const playlist = [
+
+  const handleMove = (e) => {
+    setPosition({
+      x: e.clientX,
+      y: e.clientY,
+    });
+  };
+  const images = [
     {
       id: 1,
-      title: "Midnight Drive",
-      artist: "Nova Waves",
-      description:
-        "A chill synthwave track perfect for late-night drives under neon lights.",
-      duration: "3:42",
-      poster:
-        "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop",
-      audioUrl:
-        "https://cdn.pixabay.com/download/audio/2022/03/15/audio_4f10d7.mp3?filename=midnight-drive-1234.mp3",
-      cta: {
-        label: "Play Now",
-        href: "https://open.spotify.com/track/example1",
-      },
+      src: "https://images.unsplash.com/photo-1506765515384-028b60a970df",
     },
     {
       id: 2,
-      title: "Golden Horizon",
-      artist: "Luna Fields",
-      description:
-        "An uplifting indie pop song that captures the warmth of a summer morning.",
-      duration: "4:05",
-      poster:
-        "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?q=80&w=800&auto=format&fit=crop",
-      audioUrl:
-        "https://cdn.pixabay.com/download/audio/2022/03/16/audio_3c1b89.mp3?filename=golden-horizon-5678.mp3",
-      cta: {
-        label: "Play Song",
-        href: "https://open.spotify.com/track/example2",
-      },
+      src: "https://images.unsplash.com/photo-1519682337058-a94d519337bc",
     },
     {
       id: 3,
-      title: "Electric Pulse",
-      artist: "DJ Vector",
-      description:
-        "A high-energy EDM banger with electrifying drops and pulsating beats.",
-      duration: "2:58",
-      poster:
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop",
-      audioUrl:
-        "https://cdn.pixabay.com/download/audio/2022/03/14/audio_7e5b76.mp3?filename=electric-pulse-9012.mp3",
-      cta: {
-        label: "Listen Now",
-        href: "https://open.spotify.com/track/example3",
-      },
+      src: "https://images.unsplash.com/photo-1495567720989-cebdbdd97913",
     },
     {
       id: 4,
-      title: "Fading Memories",
-      artist: "Ava Sol",
-      description:
-        "A soft acoustic ballad reflecting on love, loss, and the passage of time.",
-      duration: "3:33",
-      poster:
-        "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=800&auto=format&fit=crop",
-      audioUrl:
-        "https://cdn.pixabay.com/download/audio/2022/02/17/audio_1e8c3f.mp3?filename=fading-memories-3456.mp3",
-      cta: {
-        label: "Play Track",
-        href: "https://open.spotify.com/track/example4",
-      },
+      src: "https://images.unsplash.com/photo-1522199710521-72d69614c702",
     },
     {
       id: 5,
-      title: "City Lights",
-      artist: "Echo District",
-      description:
-        "A smooth lo-fi hip-hop track inspired by urban nights and quiet thoughts.",
-      duration: "3:21",
-      poster:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop",
-      audioUrl:
-        "https://cdn.pixabay.com/download/audio/2022/01/15/audio_6a5c31.mp3?filename=city-lights-7890.mp3",
-      cta: {
-        label: "Play Now",
-        href: "https://open.spotify.com/track/example5",
-      },
+      src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    },
+    {
+      id: 6,
+      src: "https://images.unsplash.com/photo-1517816428104-797678c7cf0c",
+    },
+    {
+      id: 7,
+      src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    },
+    {
+      id: 8,
+      src: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429",
     },
   ];
-
-  const [hovered, setHovered] = useState(null);
-  const [currentcard, setCurrrentCard] = useState(null);
+  const glowingColors = [
+    "#ff007f", // Neon Pink
+    "#00e5ff", // Electric Cyan
+    "#39ff14", // Neon Green
+    "#ffea00", // Neon Yellow
+    "#ff5f1f", // Neon Orange
+    "#7f00ff", // Neon Purple
+    "#ff00ff", // Magenta
+    "#00ffcc", // Aqua Glow
+    "#ff1493", // Deep Pink Glow
+    "#00ff6a", // Lime Glow
+  ];
 
   return (
-    <div className="h-screen w-full bg-neutral-200 pt-3">
-      <div className="mx-auto mt-3 flex h-auto max-w-4xl items-center justify-between rounded-4xl bg-neutral-400/20 px-10 py-1 shadow-lg">
-        <div className="flex items-start justify-center gap-2 rounded-full">
-          <GrTechnology fontSize={20} />
+    <>
+      <div
+        className="relative flex min-h-screen w-full justify-center bg-neutral-800"
+        onMouseMove={handleMove}
+      >
+        <div className="absolute h-[20px] w-[200px] -translate-y-[50%] rounded-full border-2 border-amber-100 bg-amber-50 blur-xl"></div>
+        <div className="fixed mt-10 flex h-auto items-center justify-between rounded-full bg-neutral-950/20 px-5 py-1 sm:w-[60%]">
+          <div className="">
+            <SiPlausibleanalytics fontSize={20} color="white" />
+          </div>
+          <div className="flex items-center justify-between">
+            {navItems &&
+              navItems.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  className="relative flex items-center justify-center px-4 text-white transition-all duration-300 ease-out"
+                  onMouseEnter={() => setHovered(index)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  <motion.span
+                    className="relative z-20"
+                    animate={{
+                      color: hovered === index ? "black" : "white",
+                    }}
+                    transition={{
+                      duration: 0.3,
+                    }}
+                  >
+                    {item.name}
+                  </motion.span>
+                  {hovered === index && (
+                    <motion.div
+                      className="absolute z-0 h-full w-full rounded-full bg-neutral-100"
+                      layoutId="hover"
+                    ></motion.div>
+                  )}
+                </a>
+              ))}
+          </div>
         </div>
-        <div className="relative flex items-center justify-between">
-          {items.map((item, index) => (
-            <a
+
+        <div className="mx-auto mt-40 max-w-4xl columns-1 gap-4 space-y-4 rounded-xl p-1 sm:columns-2 lg:columns-3">
+          {images.map((img, index) => (
+            <motion.div
               key={index}
-              href={item.href}
-              className="group relative cursor-pointer rounded-2xl px-2 py-1 text-[14px] font-semibold text-neutral-800"
-              onMouseEnter={() => setHovered(index)}
-              onMouseLeave={() => setHovered(null)}
+              className="overflow-hidden rounded-xl p-2"
+              style={{
+                border: `.5px solid ${glowingColors[index % glowingColors.length]}`,
+              }}
+              whileInView={{
+                opacity: 1,
+                filter: "blur(0px)",
+                y: 0,
+                scale: [1, 1.02, 1], // <-- nudge
+              }}
+              transition={{
+                duration: 2,
+
+                repeatType: "reverse",
+                delay: index * 0.2,
+              }}
             >
-              {hovered === index && (
-                <motion.div
-                  layoutId="underline"
-                  className="absolute inset-0 z-0 h-full w-full rounded-lg bg-neutral-700"
-                />
-              )}
-              <motion.span
-                className="relative z-10 group-hover:text-neutral-100"
-                inital={false}
-                animate={{
-                  color:
-                    hovered === index
-                      ? "var(--color-neutral-300)"
-                      : "var(--color-neutral-800)",
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                {item.name}
-              </motion.span>
-            </a>
+              <motion.img
+                src={img.src}
+                className={`w-full rounded-lg border-[1px] object-cover transition-all duration-300 ease-in-out hover:scale-115`}
+                alt=""
+              />
+            </motion.div>
           ))}
         </div>
       </div>
-
-      <div className="relative mt-10 flex items-center justify-center bg-neutral-200 p-5">
-        <LayoutGroup>
-          <motion.div className="grid max-w-4xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {playlist.map((track) => (
-              <motion.div
-                layoutId={`trackCard-${track.id}`}
-                onClick={() => setCurrrentCard(track)}
-                key={track.id}
-                className="rounded-lg bg-neutral-100 p-1 shadow-lg"
-              >
-                <img
-                  src={track.poster}
-                  className="rounded-sm mask-b-from-50%"
-                />
-                <motion.div className="flex items-center justify-between">
-                  <h3 className="mt-2 inline-block text-sm text-neutral-800">
-                    {track.title}
-                  </h3>
-                  <button className="cursor-pointer">
-                    <CgPlayButtonO
-                      fontSize={20}
-                      className="transition-all duration-300 hover:scale-110"
-                    />
-                  </button>
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {currentcard && (
-            <motion.div
-              className="absolute inset-x-0 z-20 mx-auto flex h-auto w-80 flex-col items-center rounded-lg bg-neutral-200 p-1 shadow-lg"
-              layoutId={`trackCard-${currentcard.id}`}
-            >
-              <motion.img
-                src={currentcard.poster}
-                className="aspect-square h-40 w-full rounded-lg object-cover"
-              />
-              <h4 className="mt-3 w-full px-1 text-[15px] font-semibold text-neutral-700">
-                {currentcard.title}
-              </h4>
-              <motion.p
-                className="mt-1 p-1 text-[10px] text-neutral-700"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: "0.3" }}
-              >
-                {currentcard.description}
-              </motion.p>
-            </motion.div>
-          )}
-        </LayoutGroup>
-        {currentcard && (
-          <div
-            className="fixed inset-0 z-10 h-screen w-full bg-neutral-500/50 backdrop-blur-sm"
-            onClick={() => setCurrrentCard(null)}
-          ></div>
-        )}
-      </div>
-    </div>
+    </>
   );
 };
 

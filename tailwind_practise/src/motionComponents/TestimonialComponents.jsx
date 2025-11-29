@@ -7,25 +7,25 @@ const Testimonial = () => {
 
   return (
     <div className="h-screen w-full bg-neutral-900">
-      <motion.div className="flex h-full w-full items-center justify-center bg-neutral-900 bg-[linear-gradient(to_right,var(--color-neutral-800)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-neutral-800)_1px,transparent_1px)] mask-radial-from-50% bg-size-[80px_80px]">
-        <motion.div className="group relative min-h-100 max-w-200 overflow-hidden rounded-xl bg-neutral-700 p-3 shadow-sm inset-shadow-sm inset-shadow-neutral-700 sm:h-100">
-          <div className="absolute -top-15 right-0 h-30 w-100 origin-right -rotate-z-15 bg-linear-to-b from-transparent via-neutral-500 via-30% to-transparent mask-l-from-5% mask-radial-from-50% opacity-0 blur-xs duration-600 group-hover:opacity-100 group-hover:transition group-hover:ease-in"></div>
+      <Container>
+        <Layout>
+          <BeamLight />
           <motion.div className="grid h-full w-full rounded-lg border-neutral-400 bg-radial-[var(--color-neutral-400)_1%,transparent_1%] bg-size-[10px_10px] text-neutral-100 sm:grid-cols-2">
-            <Img activeIndex={activeIndex} />{" "}
+            <Img activeIndex={activeIndex} />
             <TextContent
               activeIndex={activeIndex}
               setActiveIndex={setActiveIndex}
             />
           </motion.div>
-        </motion.div>
-      </motion.div>
+        </Layout>
+      </Container>
     </div>
   );
 };
 
 export default Testimonial;
 
-export const arrayTestimonial = [
+const arrayTestimonial = [
   {
     id: 1,
     title: "Aarav Sharma",
@@ -164,6 +164,32 @@ export const TextContent = ({ activeIndex, setActiveIndex }) => {
           />
         </button>
       </motion.div>
+    </motion.div>
+  );
+};
+
+export const BeamLight = () => {
+  return (
+    <div className="absolute -top-15 right-0 h-30 w-100 origin-right -rotate-z-15 bg-linear-to-b from-transparent via-neutral-500 via-30% to-transparent mask-l-from-5% mask-radial-from-50% opacity-0 blur-xs duration-600 group-hover:opacity-100 group-hover:transition group-hover:ease-in"></div>
+  );
+};
+
+export const Layout = ({ children, className }) => {
+  return (
+    <motion.div
+      className={`group relative min-h-100 max-w-200 overflow-hidden rounded-xl bg-neutral-700 p-3 shadow-sm inset-shadow-sm inset-shadow-neutral-700 sm:h-100 ${className}`}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export const Container = ({ children, className }) => {
+  return (
+    <motion.div
+      className={`flex h-full w-full items-center justify-center bg-neutral-900 bg-[linear-gradient(to_right,var(--color-neutral-800)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-neutral-800)_1px,transparent_1px)] mask-radial-from-50% bg-size-[80px_80px] ${className}`}
+    >
+      {children}{" "}
     </motion.div>
   );
 };

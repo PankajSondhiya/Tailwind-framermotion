@@ -1,0 +1,186 @@
+export const products = [
+  {
+    id: 1,
+    title: "Wireless Headphones",
+    description: "High-quality sound with deep bass.",
+    image: "https://picsum.photos/seed/p1/500",
+  },
+  {
+    id: 2,
+    title: "Smart Watch",
+    description: "Fitness tracking with alerts.",
+    image: "https://picsum.photos/seed/p2/500",
+  },
+  {
+    id: 3,
+    title: "Sneakers",
+    description: "Comfortable everyday running shoes.",
+    image: "https://picsum.photos/seed/p3/500",
+  },
+  {
+    id: 4,
+    title: "Sunglasses",
+    description: "UV-protected stylish eyewear.",
+    image: "https://picsum.photos/seed/p4/500",
+  },
+  {
+    id: 5,
+    title: "Backpack",
+    description: "Durable and spacious travel bag.",
+    image: "https://picsum.photos/seed/p5/500",
+  },
+  {
+    id: 6,
+    title: "Laptop",
+    description: "Ultra-slim performance laptop.",
+    image: "https://picsum.photos/seed/p6/500",
+  },
+  {
+    id: 7,
+    title: "Wallet",
+    description: "Premium leather men's wallet.",
+    image: "https://picsum.photos/seed/p7/500",
+  },
+  {
+    id: 8,
+    title: "Perfume",
+    description: "Refreshing long-lasting fragrance.",
+    image: "https://picsum.photos/seed/p8/500",
+  },
+  {
+    id: 9,
+    title: "Watch",
+    description: "Elegant stainless steel wristwatch.",
+    image: "https://picsum.photos/seed/p9/500",
+  },
+  {
+    id: 10,
+    title: "Coffee Mug",
+    description: "Minimal ceramic mug for daily use.",
+    image: "https://picsum.photos/seed/p10/500",
+  },
+
+  {
+    id: 11,
+    title: "Speaker",
+    description: "Portable Bluetooth speaker.",
+    image: "https://picsum.photos/seed/p11/500",
+  },
+  {
+    id: 12,
+    title: "Gaming Mouse",
+    description: "RGB ergonomic gaming mouse.",
+    image: "https://picsum.photos/seed/p12/500",
+  },
+  {
+    id: 13,
+    title: "Keyboard",
+    description: "Mechanical keyboard with blue switches.",
+    image: "https://picsum.photos/seed/p13/500",
+  },
+  {
+    id: 14,
+    title: "Desk Lamp",
+    description: "Adjustable LED desk lamp.",
+    image: "https://picsum.photos/seed/p14/500",
+  },
+  {
+    id: 15,
+    title: "Water Bottle",
+    description: "Stainless steel insulated bottle.",
+    image: "https://picsum.photos/seed/p15/500",
+  },
+
+  {
+    id: 16,
+    title: "Dumbbells",
+    description: "Rubber-coated workout dumbbells.",
+    image: "https://picsum.photos/seed/p16/500",
+  },
+  {
+    id: 17,
+    title: "Camera Lens",
+    description: "High-clarity photography lens.",
+    image: "https://picsum.photos/seed/p17/500",
+  },
+  {
+    id: 18,
+    title: "Tripod",
+    description: "Lightweight adjustable tripod.",
+    image: "https://picsum.photos/seed/p18/500",
+  },
+  {
+    id: 19,
+    title: "Makeup Kit",
+    description: "Complete cosmetic makeup set.",
+    image: "https://picsum.photos/seed/p19/500",
+  },
+  {
+    id: 20,
+    title: "Hair Dryer",
+    description: "Powerful ionic hair dryer.",
+    image: "https://picsum.photos/seed/p20/500",
+  },
+
+  {
+    id: 21,
+    title: "Electric Kettle",
+    description: "Quick-boil electric kettle.",
+    image: "https://picsum.photos/seed/p21/500",
+  },
+  {
+    id: 22,
+    title: "Succulent Plant",
+    description: "Cute indoor desk plant.",
+    image: "https://picsum.photos/seed/p22/500",
+  },
+  {
+    id: 23,
+    title: "Blanket",
+    description: "Soft knitted throw blanket.",
+    image: "https://picsum.photos/seed/p23/500",
+  },
+  {
+    id: 24,
+    title: "Desk Clock",
+    description: "Minimal modern clock.",
+    image: "https://picsum.photos/seed/p24/500",
+  },
+  {
+    id: 25,
+    title: "Office Chair",
+    description: "Ergonomic workstation chair.",
+    image: "https://picsum.photos/seed/p25/500",
+  },
+
+  {
+    id: 26,
+    title: "Smartphone",
+    description: "Latest smartphone with great camera.",
+    image: "https://picsum.photos/seed/p26/500",
+  },
+  {
+    id: 27,
+    title: "Keyboard Combo",
+    description: "Wireless keyboard and mouse set.",
+    image: "https://picsum.photos/seed/p27/500",
+  },
+  {
+    id: 28,
+    title: "Handbag",
+    description: "Fashion leather handbag.",
+    image: "https://picsum.photos/seed/p28/500",
+  },
+  {
+    id: 29,
+    title: "Sports Watch",
+    description: "Water-resistant sport watch.",
+    image: "https://picsum.photos/seed/p29/500",
+  },
+  {
+    id: 30,
+    title: "Earbuds",
+    description: "Wireless earbuds with long battery.",
+    image: "https://picsum.photos/seed/p30/500",
+  },
+];

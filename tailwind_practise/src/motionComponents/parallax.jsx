@@ -67,11 +67,10 @@ const Parallax = () => {
     const motionValue = Math.floor(latest * 3);
     setBackground(backgroundFilter[motionValue]);
   });
-  console.log(background);
 
   return (
     <motion.div
-      className="flex min-h-screen items-center justify-center bg-neutral-700 p-10"
+      className="flex min-h-screen w-full items-center justify-center bg-neutral-700 p-10"
       animate={{ background }}
       transition={{ ease: "easeInOut" }}
       ref={backgroundRef}

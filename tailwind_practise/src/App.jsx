@@ -15,18 +15,23 @@ import Parallax from "./motionComponents/parallax";
 import Lamp from "./components/lamp";
 import SkewedPattern from "./components/skewed";
 import MotionDashboard from "./components/motion.dashboard";
-import Navbar from "./motionComponents/navbar";
 import TextAnimation from "./motionComponents/textAnimation";
 import AnimationSequenceButton from "./motionComponents/animationSequence";
 import Testimonial from "./motionComponents/TestimonialComponents";
+// import MovingCursor from "./motionComponents/followCursor";
+import MaskEffect from "./motionComponents/maskEffect";
+import Navbar from "./motionComponents/navbar";
+import CardScrollParallax from "./motionComponents/cardScrollParallax";
+import { LayoutGroup } from "motion/react";
+import LayoutAnimation from "./motionComponents/layout";
 
 function App() {
   return (
-    <div className="max-h-screen w-[100%]">
+    <div className="h-screen min-h-screen w-[100%]">
       {/* <SkewedBackground />
       <BackgroundBoxes />
-     
-      <SvgAnimation /> */}
+
+      <SvgAnimation />
       {/* <SVGlines /> */}
       {/* <DottedBackground /> */}
       {/* <Grid /> */}
@@ -39,9 +44,14 @@ function App() {
       {/* <SkewedPattern /> */}
       {/* <MotionDashboard /> */}
       {/* <Parallax /> */}
-      {/* <Navbar /> */}
+
       {/* <TextAnimation /> */}
-      <Testimonial />
+      {/* <Testimonial /> */}
+      {/* <MovingCursor /> */}
+      {/* <MaskEffect /> */}
+      {/* <Navbar /> */}
+      {/* <CardScrollParallax /> */}
+      <LayoutAnimation />
     </div>
   );
 }
